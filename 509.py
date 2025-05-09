@@ -1,5 +1,9 @@
-n = 4
-c = 0
-for i in range(n):
-    c += (i - 1) + (i - 2) 
-print(c)
+class Solution:
+    def fib(self, n: int) -> int:
+        if n < 2:
+            return n
+        return self.fib(n - 2) + self.fib(n - 1)
+
+
+
+print(Solution().fib(n=3))
