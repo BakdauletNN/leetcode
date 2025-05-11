@@ -1,16 +1,17 @@
-from typing import List
-
-
-class Solution:
-    def peakIndexInMountainArray(self, arr: List[int]) -> int:
-        left, right = 0, len(arr) - 1
-        while left < right:
-            mid = (left + right) // 2
-            if arr[mid] < arr[mid + 1]:
-                left = mid + 1
-            else:
-                right = mid
-        return left
-
-
-print(Solution().peakIndexInMountainArray(arr = [3,4,5,1]))
+class Solution {
+    public int peakIndexInMountainArray(int[] arr) {
+        int left = 0;
+        int right = arr.length - 1;
+        
+        while (left < right) {
+            int mid = left + (right - left) / 2;
+            if (arr[mid] < arr[mid + 1]) {
+                left = mid + 1;
+            } else {
+                right = mid;
+            }
+        }
+        
+        return left;
+    }
+}
